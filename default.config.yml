@@ -6,67 +6,74 @@ configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: git@github.com:7agustibm/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/Development/tmp/dotfiles
 dotfiles_files:
   - .bash_profile
   - .gitignore
   - .inputrc
   - .osx
   - .vimrc
+  - .zshrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
-  - bash-completion
-  - doxygen
   - gettext
-  - gifsicle
   - git
   - go
   - gpg
   - hub
   - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
   - nmap
   - node
   - nvm
-  - php
   - ssh-copy-id
-  - cowsay
   - readline
   - openssl
   - pv
   - wget
-  - wrk
+  - tmux
+  - zsh
+  - zsh-completions
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-drivers
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - chromedriver
   - docker
-  - dropbox
-  - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - macvim
-  - sequel-pro
-  - skitch
-  - slack
-  - sublime-text
-  - transmit
   - vagrant
+  - visual-studio-code
+  - franz
+  - spectacle
+  - franz
+  - spotify
+  - spotifree
+  - jetbrains-toolbox
+  - gpg-suite
+  - yubico-yubikey-manager
+  - yubico-yubikey-personalization-gui
+  - yubico-authenticator
+  - appcleaner
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { id: 823766827, name: 'OneDrive' }
+  - { id: 425424353, name: 'The Unarchiver' }
+  - { id: 409183694, name: 'Keynote' }
+  - { id: 462058435, name: 'Excel' }
+  - { id: 904280696, name: 'Things' }
+  - { id: 409201541, name: 'Pages' }
+  - { id: 462054704, name: 'Word' }
+  - { id: 409203825, name: 'Numbers' }
+  - { id: 462062816, name: 'Powerpoint' }
+  - { id: 1333542190, name: '1Password 7' }
 mas_email: ""
 mas_password: ""
 
@@ -83,7 +90,8 @@ gem_packages: []
   # - name: bundler
   #   state: present # present/absent/latest, default: present
   #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
+npm_packages: 
+  - name: npx
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
