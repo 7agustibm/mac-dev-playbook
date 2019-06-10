@@ -8,7 +8,7 @@ configure_osx: yes
 
 dotfiles_repo: git@github.com:7agustibm/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
-dotfiles_repo_local_destination: ~/Development/tmp/dotfiles
+dotfiles_repo_local_destination: ~/tmp/dotfiles
 dotfiles_files:
   - .bash_profile
   - .gitignore
@@ -36,12 +36,16 @@ homebrew_installed_packages:
   - wget
   - tmux
   - zsh
-  - zsh-completions
+  - jenkins-lts
+  - jq
+  - terraform
+  - terragrunt
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
   - homebrew/cask-drivers
+  - homebrew/cask-versions
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
@@ -61,6 +65,7 @@ homebrew_cask_apps:
   - yubico-yubikey-personalization-gui
   - yubico-authenticator
   - appcleaner
+  - adoptopenjdk8
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
@@ -95,7 +100,12 @@ npm_packages:
   # - name: webpack
   #   state: present # present/absent/latest, default: present
   #   version: "^2.6" # default: N/A
-pip_packages: []
+pip_packages:
+  - name: tornado
+  - name: nose
+  - name: awscli
+  - name: boto
+  - name: boto3
   # - name: mkdocs
   #   state: present # present/absent/latest, default: present
   #   version: "0.16.3" # default: N/A
